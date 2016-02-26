@@ -1,0 +1,5 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="JavaScript/Other/Replace Single-Quoted String with Double-Quoted String" />
+  </component>
+</application>
