@@ -105,6 +105,9 @@
     <option name="KEYWORD_SUBSTITUTION_WRAPPERS" value="" />
     <option name="MAKE_NEW_FILES_READ_ONLY" value="false" />
   </component>
+  <component name="NodeLocalInterpreterManager">
+    <node-interpreter path="/usr/local/bin/node" version="5.3.0" last-modified="1450291370000" />
+  </component>
   <component name="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl">
     <recent_templates>
       <option name="RECENT_TEMPLATES">
