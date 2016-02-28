@@ -3,6 +3,7 @@
     <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.git;.hg;.svn;CVS;RCS;SCCS;__pycache__;_svn;rcs;" />
     <extensionMap>
       <mapping ext="plist" type="PLAIN_TEXT" />
+      <mapping ext="command" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
