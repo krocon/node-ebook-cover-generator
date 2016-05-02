@@ -107,11 +107,11 @@
   </component>
   <component name="NodeJsLocalInterpreters">
     <local-interpreter path="/usr/local/bin/node">
-      <version-cache version="5.7.0" last-modified="1456201319000" />
+      <version-cache version="6.0.0" last-modified="1461699691000" />
     </local-interpreter>
   </component>
   <component name="NodeLocalInterpreterManager">
-    <node-interpreter path="/usr/local/bin/node" version="5.7.0" last-modified="1456201319000" />
+    <node-interpreter path="/usr/local/bin/node" version="6.0.0" last-modified="1461699691000" />
   </component>
   <component name="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl">
     <recent_templates>
