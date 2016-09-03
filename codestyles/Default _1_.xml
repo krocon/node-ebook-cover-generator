@@ -1,8 +1,14 @@
 <code_scheme name="Default (1)">
   <option name="RIGHT_MARGIN" value="333" />
+  <TypeScriptCodeStyleSettings>
+    <option name="INDENT_CHAINED_CALLS" value="false" />
+  </TypeScriptCodeStyleSettings>
   <XML>
     <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
   </XML>
+  <editorconfig>
+    <option name="ENABLED" value="false" />
+  </editorconfig>
   <codeStyleSettings language="HTML">
     <indentOptions>
       <option name="INDENT_SIZE" value="2" />
