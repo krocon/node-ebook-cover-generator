@@ -25,7 +25,9 @@
         </PlaceSettings>
       </entry>
       <entry key="Default">
-        <PlaceSettings />
+        <PlaceSettings>
+          <option name="IGNORE_POLICY" value="IGNORE_WHITESPACES_CHUNKS" />
+        </PlaceSettings>
       </entry>
     </option>
   </component>
