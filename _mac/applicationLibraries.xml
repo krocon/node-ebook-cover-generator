@@ -105,6 +105,17 @@
       </DOCUMENTATION>
       <SOURCES />
     </library>
+    <library name="jquery.lory" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_lory.js_2.3.4_jquery.lory.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_lory.js_2.3.4_jquery.lory.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
     <library name="socket.io" type="javaScript">
       <properties>
         <sourceFilesUrls>
