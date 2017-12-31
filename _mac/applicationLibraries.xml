@@ -41,6 +41,28 @@
       </CLASSES>
       <SOURCES />
     </library>
+    <library name="d3.v3" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v3.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v3.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
+    <library name="d3.v4" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v4.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v4.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
     <library name="epub" type="javaScript">
       <properties>
         <sourceFilesUrls>
@@ -113,6 +135,17 @@
       </properties>
       <CLASSES>
         <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_lory.js_2.3.4_jquery.lory.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
+    <library name="nv.d3" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdn.rawgit.com_novus_nvd3_v1.8.1_build_nv.d3.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdn.rawgit.com_novus_nvd3_v1.8.1_build_nv.d3.js" />
       </CLASSES>
       <SOURCES />
     </library>
