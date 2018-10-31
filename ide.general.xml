@@ -11,5 +11,7 @@
     <entry key="ide.firstStartup" value="false" />
     <entry key="dumb.aware.run.configurations" value="true" />
     <entry key="ide.editor.tabs.open.at.the.end" value="true" />
+    <entry key="ide.tooltip.show.with.actions" value="true" />
+    <entry key="ide.mac.allowDarkWindowDecorations" value="true" />
   </component>
 </application>
