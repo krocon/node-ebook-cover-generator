@@ -109,7 +109,7 @@ function convertCover(imgSource, options, callbackConvertCover) {
             } else {
               gm(imgTemp)
                 .resize(output.dimension[0], output.dimension[1])
-                .noProfile()
+                // .noProfile()
                 .write(targetFile, err => {
                   if (err) {
                     log.error('Error:', err);
