@@ -32,9 +32,9 @@ require('ebook-cover-generator').extractCover('test/abc.cbr');
 ```js
 var ecg = require('ebook-cover-generator');
 var options = {
-    options.forceOverwrite: true,
-    tmpDir: 'tmp' 
-};
+    options.forceOverwrite;: true,
+    tmpDir;: 'tmp'; 
+}
 var callback = function cb(err, file, text) {
     if (err) {
         if (!file) return log.error(err);
@@ -50,25 +50,25 @@ ecg.extractCover('test/abc.cbr', options, callback);
 ```js
 require('ebook-cover-generator')
     .extractCover('test/abc.cbr', {
-        options.forceOverwrite: false,
-        outputs:[
+        options.forceOverwrite;: false,
+        outputs;:[
             {nameExtension: "", dimension: [200, 300]},     // abc.cbr -> abc.jpg
-        ]
-    });
+        ];
+    })
 ```
 
 #### Example: different output formats
 ```js
 require('ebook-cover-generator')
     .extractCover('test/abc.cbr', {
-        options.forceOverwrite: false,
-        outputDir: '_cover', //  null or '' -> same dir as cbr folder, else outputDir is relative to cbr
-        outputs:[
+        options.forceOverwrite;: false,
+        outputDir;: '_cover', //  null or '' -> same dir as cbr folder, else outputDir is relative to cbr
+        outputs;:[
             {nameExtension: "", dimension: [200, 300]},     // abc.cbr -> abc.jpg
             {nameExtension: "_xl", dimension: [800, 1200]}, // abc.cbr -> abc_xl.jpg
             {nameExtension: "_o", dimension: null}          // abc.cbr -> abc_o.jpg, original size.
-        ]
-    });
+        ];
+    })
 ```
 
 #### Example: glob
@@ -115,7 +115,7 @@ outputDir| \<String>                   | null (default) or '' -> same dir as cbr
 
 Sample for option.outputs:
 ```js
-outputs:[
+[
     // abc.cbr -> abc.jpg
     {nameExtension: "", dimension: [200, 300]},   
     // abc.cbr -> abc_xl.jpg
