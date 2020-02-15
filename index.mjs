@@ -59,7 +59,7 @@ function defaultCallback(err, file, text) {
   if (file) log.info('file', file, (text ? text : ''));
 }
 
-function convertCover(imgSource, options, callbackConvertCover) {
+export function convertCover(imgSource, options, callbackConvertCover) {
   // imgSource must be copied already  from tmp directory to target folder!
 
   if (!options || !options.outputs || !options.outputs.length) return callbackConvertCover(null, [imgSource]);
@@ -169,7 +169,7 @@ function convertCover(imgSource, options, callbackConvertCover) {
   }); // rename
 }
 
-function extractCoverPromise(archive, options) {
+export function extractCoverPromise(archive, options) {
   return new Promise((resolve, reject) => {
     extractCover(archive, options, (err, file) => {
       if (err) return reject(err);
@@ -178,7 +178,7 @@ function extractCoverPromise(archive, options) {
   });
 }
 
-function extractCoverGlob(pattern, options, callback) {
+export function extractCoverGlob(pattern, options, callback) {
   if (!pattern) return log.error("Error: pattern missing.", null, null);
 
   if (!callback) callback = defaultCallback;
@@ -221,7 +221,6 @@ function extractCoverGlob(pattern, options, callback) {
     });
   });
 }
-
 
 export function extractCover(archive, options, callback) {
 
