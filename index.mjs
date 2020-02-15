@@ -7,8 +7,8 @@ import fs from "fs-extra";
 import path from "path";
 import glob from "glob";
 import async from "async";
-import Promise from "es6-promise";
-import gm from "gm";
+import {exec} from "child_process";
+
 
 const imgFilePattern = /\.jpg$|\.JPG$|\.jpeg$|\.JPEG$|\.png$|\.PNG$|\.gif$|\.GIF$/g;
 
@@ -107,18 +107,45 @@ function convertCover(imgSource, options, callbackConvertCover) {
               });
 
             } else {
-              gm(imgTemp)
-                .resize(output.dimension[0], output.dimension[1])
-                // .noProfile()
-                .write(targetFile, err => {
-                  if (err) {
-                    log.error('Error:', err);
-                  } else {
-                    log.info('File saved.', targetFile);
-                  }
-                  newfiles.push(targetFile);
-                  callbackWaterfall();
-                });
+              if (!options.gmExecutable) options.gmExecutable = 'gm';
+              const buf = [];
+              buf.push('"');
+              buf.push(options.gmExecutable);
+              buf.push('" ');
+              buf.push(' convert "');
+              buf.push(imgTemp);
+              buf.push('" -resize ');
+              buf.push(output.dimension[0]);
+              buf.push('x');
+              buf.push(output.dimension[1]);
+              buf.push(' "');
+              buf.push(targetFile);
+              buf.push('"');
+
+              let command = buf.join('');
+              // console.info('\n' + command + '\n\n');
+              exec(command, (err, stdout, stderr) => {
+                if (err) {
+                  log.error('Error:', err);
+                } else {
+                  log.info('File saved.', targetFile);
+                }
+                newfiles.push(targetFile);
+                callbackWaterfall();
+              });
+
+              // gm(imgTemp)
+              //   .resize(output.dimension[0], output.dimension[1])
+              //   // .noProfile()
+              //   .write(targetFile, err => {
+              //     if (err) {
+              //       log.error('Error:', err);
+              //     } else {
+              //       log.info('File saved.', targetFile);
+              //     }
+              //     newfiles.push(targetFile);
+              //     callbackWaterfall();
+              //   });
             }
           }; // go
         })(options.outputs[i])
