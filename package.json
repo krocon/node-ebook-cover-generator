@@ -1,6 +1,6 @@
 {
   "name": "ebook-cover-generator",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
   "keywords": [
@@ -37,6 +37,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/krocon/node-scan-dir.git"
+    "url": "https://github.com/krocon/ebook-cover-generator.git"
   }
 }
