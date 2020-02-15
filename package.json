@@ -1,37 +1,30 @@
 {
-  "_from": "ebook-cover-generator@0.0.9",
-  "_id": "ebook-cover-generator@0.0.9",
-  "_inBundle": false,
-  "_integrity": "sha1-7KD92Z62jtNWJs32dwAv/zNn2TU=",
-  "_location": "/ebook-cover-generator",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "ebook-cover-generator@0.0.9",
-    "name": "ebook-cover-generator",
-    "escapedName": "ebook-cover-generator",
-    "rawSpec": "0.0.9",
-    "saveSpec": null,
-    "fetchSpec": "0.0.9"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "name": "ebook-cover-generator",
+  "version": "0.0.10",
+  "type": "module",
+  "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
+  "keywords": [
+    "Cover",
+    "Thumb",
+    "jpg",
+    "CBR",
+    "CBZ",
+    "CB7",
+    "ebook",
+    "image",
+    "generator"
   ],
-  "_resolved": "https://registry.npmjs.org/ebook-cover-generator/-/ebook-cover-generator-0.0.9.tgz",
-  "_shasum": "eca0fdd99eb68ed35626cdf677002fff3367d935",
-  "_spec": "ebook-cover-generator@0.0.9",
-  "_where": "d:\\data\\entwicklung\\test",
   "author": {
     "name": "Marc Kronberg",
     "email": "krocon@gmail.com",
-    "url": "www.krocon.de"
+    "url": "https://gui.expert/"
   },
-  "bugs": {
-    "url": "https://github.com/krocon/node-ebook-cover-generator/issues"
-  },
-  "bundleDependencies": false,
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "modules/regroup.mjs",
+    "!test"
+  ],
   "dependencies": {
     "async": "^1.4.2",
     "es6-promise": "^3.0.2",
@@ -41,30 +34,13 @@
     "shell-quote": "^1.3.4",
     "unpack-all": "0.0.4"
   },
-  "deprecated": false,
-  "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
   "devDependencies": {
-    "gm": "^1.20.0"
+    "es6-promise": "^3.0.2"
   },
-  "files": [
-    "index.js",
-    "!test"
-  ],
-  "homepage": "https://github.com/krocon/node-ebook-cover-generator#readme",
-  "keywords": [
-    "Cover",
-    "Thumb",
-    "jpg",
-    "CBR",
-    "CBZ",
-    "CB7"
-  ],
+  "readmeFilename": "README.md",
   "license": "MIT",
-  "main": "index.js",
-  "name": "ebook-cover-generator",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krocon/node-ebook-cover-generator.git"
-  },
-  "version": "0.0.9"
+    "url": "https://github.com/krocon/node-scan-dir.git"
+  }
 }
