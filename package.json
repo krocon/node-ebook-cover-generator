@@ -1,6 +1,6 @@
 {
   "name": "ebook-cover-generator",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
   "keywords": [

@@ -130,7 +130,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
                 if (err) {
                   log.error('Error:', err);
                 } else {
-                  if (!options.quite) log.info('File saved.', targetFile);
+                  log.info('File saved.', targetFile);
                 }
                 newfiles.push(targetFile);
                 callbackWaterfall();
@@ -143,7 +143,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
               //     if (err) {
               //       log.error('Error:', err);
               //     } else {
-              //       if (!options.quite) log.info('File saved.', targetFile);
+              //       log.info('File saved.', targetFile);
               //     }
               //     newfiles.push(targetFile);
               //     callbackWaterfall();
@@ -165,7 +165,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
 
     // Start:
     async.waterfall(todos, (err, result) => {
-      if (!options.quite) log.info('Outputs created:', todos.length);
+      log.info('Outputs created:', todos.length);
       callbackConvertCover(err, newfiles);
     });
   }); // rename
@@ -191,7 +191,7 @@ export function extractCoverGlob(pattern, options, callback) {
   glob(pattern, {}, (err, files) => {
     if (err) return callback(err, null, null);
 
-    if (!options.quite) log.info('Glob: ' + files.length + ' files found.');
+    log.info('Glob: ' + files.length + ' files found.');
 
     const newfiles = [];
 
@@ -207,7 +207,7 @@ export function extractCoverGlob(pattern, options, callback) {
                 if (!file) {
                   log.error(err);
                 } else {
-                  if (!options.quite) log.info(err, file);
+                  log.info(err, file);
                 }
               } else if (file && !options.quite) log.info('file', file, (text ? text : ''));
               _callback();
@@ -220,13 +220,17 @@ export function extractCoverGlob(pattern, options, callback) {
 
     // Start:
     async.waterfall(todos, (err, result) => {
-      if (!options.quite) log.info('done all.');
+      log.info('done all.');
       callback(err, newfiles);
     });
   });
 }
 
 export function extractCover(archive, options, callback) {
+
+  if (options.silent || options.quite) {
+    log.level = 'error';
+  }
 
   const targetCover = path.join(
     path.dirname(archive),
