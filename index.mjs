@@ -51,6 +51,8 @@ function getCoverIndex(files) {
   return files.indexOf(jpgEntryName);
 }
 
+function quiteCallback(err, file, text) {}
+
 function defaultCallback(err, file, text) {
   if (err) {
     if (!file) return log.error(err);
@@ -128,7 +130,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
                 if (err) {
                   log.error('Error:', err);
                 } else {
-                  log.info('File saved.', targetFile);
+                  if (!options.quite) log.info('File saved.', targetFile);
                 }
                 newfiles.push(targetFile);
                 callbackWaterfall();
@@ -141,7 +143,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
               //     if (err) {
               //       log.error('Error:', err);
               //     } else {
-              //       log.info('File saved.', targetFile);
+              //       if (!options.quite) log.info('File saved.', targetFile);
               //     }
               //     newfiles.push(targetFile);
               //     callbackWaterfall();
@@ -163,7 +165,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
 
     // Start:
     async.waterfall(todos, (err, result) => {
-      log.info('Outputs created:', todos.length);
+      if (!options.quite) log.info('Outputs created:', todos.length);
       callbackConvertCover(err, newfiles);
     });
   }); // rename
@@ -181,13 +183,15 @@ export function extractCoverPromise(archive, options) {
 export function extractCoverGlob(pattern, options, callback) {
   if (!pattern) return log.error("Error: pattern missing.", null, null);
 
-  if (!callback) callback = defaultCallback;
+  if (!callback) {
+    callback = options.quite ? quiteCallback : defaultCallback;
+  }
   if (!options) options = {};
 
   glob(pattern, {}, (err, files) => {
     if (err) return callback(err, null, null);
 
-    log.info('Glob: ' + files.length + ' files found.');
+    if (!options.quite) log.info('Glob: ' + files.length + ' files found.');
 
     const newfiles = [];
 
@@ -216,7 +220,7 @@ export function extractCoverGlob(pattern, options, callback) {
 
     // Start:
     async.waterfall(todos, (err, result) => {
-      log.info('done all.');
+      if (!options.quite) log.info('done all.');
       callback(err, newfiles);
     });
   });
