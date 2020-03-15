@@ -1,6 +1,6 @@
 {
   "name": "ebook-cover-generator",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "type": "module",
   "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
   "keywords": [
@@ -26,13 +26,13 @@
     "!test"
   ],
   "dependencies": {
-    "async": "^1.4.2",
-    "fs-extra": "^0.24.0",
-    "glob": "^5.0.15",
-    "npmlog": "^1.2.1",
+    "async": "^3.2.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "npmlog": "^4.1.2",
     "rimraf": "^3.0.2",
     "shell-quote": "^1.7.2",
-    "unpack-all": "0.0.13"
+    "unpack-all": "0.0.20"
   },
   "readmeFilename": "README.md",
   "license": "MIT",

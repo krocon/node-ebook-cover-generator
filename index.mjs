@@ -257,6 +257,7 @@ export function extractCover(archive, options, callback) {
 
           walk(options.targetDir, (err, results) => {
             if (err) {
+              rimraf.sync(options.targetDir);
               return callback(err, null, null);
             } else {
 
@@ -267,7 +268,10 @@ export function extractCover(archive, options, callback) {
                 sourceCover = path.join(options.targetDir, coverName);
               }
               fs.copy(sourceCover, targetCover, err => {
-                if (err) return callback(err, null, null);
+                if (err) {
+                  rimraf.sync(options.targetDir);
+                  return callback(err, null, null);
+                }
 
                 if (!options.quite) console.info('deleting ', options.targetDir);
                 rimraf.sync(options.targetDir);
