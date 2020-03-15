@@ -234,7 +234,7 @@ export function extractCover(archive, options, callback) {
     if (!options.forceOverwrite && stat) return callback('Skipped. Cover already exists.', targetCover, null);
 
     // file does not exists or it will be overwritten:
-    unpackAll.list(archive, options, (err, files, text) => {
+    unpackAll.list(archive, {...options, quiet: true}, (err, files, text) => {
       if (err) return callback(err, null, null);
 
       options.targetDir = options.tmpDir; // target dir for unpack (tmp dir), not target of resulting <cover>.jpg.
