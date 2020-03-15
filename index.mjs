@@ -269,17 +269,14 @@ export function extractCover(archive, options, callback) {
               fs.copy(sourceCover, targetCover, err => {
                 if (err) return callback(err, null, null);
 
-                // console.info('deleting ', options.targetDir);
+                if (!options.quite) console.info('deleting ', options.targetDir);
                 rimraf.sync(options.targetDir);
                 convertCover(targetCover, options, (err, files) => {
                   callback(null, files, 'created');
                 });
               })
-
-
             }
           });
-
 
         }); // unpack
       });
