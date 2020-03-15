@@ -256,11 +256,11 @@ export function extractCover(archive, options, callback) {
 
         options.indexes = [coverIndex];
         if (files[0].indexOf(': Zip') > -1) options.indexes[0]--; // workaround
-        options.forceOverwrite = true;
-        options.noDirectory = true;
+
         const coverName = files[coverIndex];
 
-        unpackAll.unpack(archive, options, (err, files, text) => {
+        const unpackOptions = {...options, forceOverwrite: true, noDirectory: true};
+        unpackAll.unpack(archive, unpackOptions, (err, files, text) => {
           if (err) return callback(err, null, null);
 
           const sourceCover = path.join(options.targetDir, coverName);

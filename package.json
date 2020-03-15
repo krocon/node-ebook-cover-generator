@@ -1,6 +1,6 @@
 {
   "name": "ebook-cover-generator",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "type": "module",
   "description": "Extracts the first picture (cover) of an ebook (CBR, CBZ, CB7) in different sizes",
   "keywords": [
@@ -19,7 +19,7 @@
     "email": "krocon@gmail.com",
     "url": "https://gui.expert/"
   },
-  "main": "index.js",
+  "main": "index.mjs",
   "files": [
     "index.js",
     "modules/regroup.mjs",
@@ -29,9 +29,9 @@
     "async": "^1.4.2",
     "fs-extra": "^0.24.0",
     "glob": "^5.0.15",
+    "unpack-all": "0.0.11",
     "npmlog": "^1.2.1",
-    "shell-quote": "^1.3.4",
-    "unpack-all": "0.0.4"
+    "shell-quote": "^1.7.2"
   },
   "readmeFilename": "README.md",
   "license": "MIT",
