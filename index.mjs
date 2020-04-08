@@ -75,7 +75,7 @@ function walkPromise(dir) {
   });
 }
 
-async function walkAsync(dir) {
+async function walkSync(dir) {
   const x = await walkPromise(dir);
   return x;
 }

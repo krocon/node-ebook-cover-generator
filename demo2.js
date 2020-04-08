@@ -1,7 +1,7 @@
 import {extractCoverGlob} from "./index.mjs";
 
 extractCoverGlob(
-  'f:/ebooks/_deu/**/*.*',
+  'f:/ebooks/_deu/__temp2/**/*.*',
   // 'f:/ebooks/_deu/__temp3/**/*.*',
   // 'f:/ebooks/_deu/__temp3/s/schwarzbart-der-pirat-bastei/**/*.*',
   {
