@@ -58,9 +58,9 @@ function quiteCallback(err, file, text) {
 function defaultCallback(err, file, text) {
   if (err) {
     if (!file) return log.error(err);
-    return log.info(err, file);
+    return log.debug(err, file);
   }
-  if (file) log.info('file', file, (text ? text : ''));
+  if (file) log.debug('file', file, (text ? text : ''));
 }
 
 function walkPromise(dir) {
@@ -175,7 +175,7 @@ export function convertCover(imgSource, options, callbackConvertCover) {
                 if (err) {
                   log.error('Error:', err);
                 } else {
-                  log.info('File saved.', targetFile);
+                  log.debug('File saved.', targetFile);
                 }
                 newfiles.push(targetFile);
                 callbackWaterfall();
@@ -316,9 +316,9 @@ export function extractCoverGlob(pattern, options, callback) {
                 if (!file) {
                   log.error(err);
                 } else {
-                  log.info(err, file);
+                  log.debug(err, file);
                 }
-              } else if (file && !options.quite) log.info('file', file, (text ? text : ''));
+              } else if (file && !options.quite) log.debug('file', file, (text ? text : ''));
               _callback();
             });
         }
@@ -329,7 +329,7 @@ export function extractCoverGlob(pattern, options, callback) {
 
     // Start:
     async.waterfall(todos, (err, result) => {
-      log.info('done all.');
+      log.debug('done all.');
       callback(err, newfiles);
     });
   });
